@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Earth to WebGL [and Moon]</title>
+    <script src="lib/Three.js"></script>
+    <script src="lib/jquery-1.6.4.js"></script>
+    <script src="lib/jquery.mousewheel.js"></script>
+    <script src="lib/RequestAnimationFrame.js"></script>
+    <script src="lib/sim/sim.js"></script>
+    <script src="earth-moon.js"></script>
+    <!--<script src="moon.js"></script>-->
+    <!--<script src="Shenzhen.js"></script>-->
+    <script>
+        var renderer = null;
+        var scene = null;
+        var camera = null;
+        var mesh = null;
+        var animating = true;
+        var app = null;
+        $(document).ready(
+                function() {
+                    var container = document.getElementById("container");
+                    app = new EarthApp();
+                    app.init({ container: container});
+                    app.start();
+                    renderer = app.renderer;
+                    addMouseHandler();
+                }
+        );
+
+        function addMouseHandler(){
+            var dom = renderer.domElement;
+            dom.addEventListener('mouseup', onmouseup, false);//mouseup必须小写
+        }
+
+        function onmouseup(event){
+            event.preventDefault();
+            animating = !animating;
+            if(animating) app.start();
+            else app.stop();
+        }
+    </script>
+</head>
+<body>
+<div id="container" style="width:98%; height:98%; overflow:hidden;
+position:absolute; background-color:#000000"></div>
+</body>
+</html>

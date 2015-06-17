@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>chapter2-1</title>
+    <link rel="stylesheet" href="css/webglbook.css" />
+    <script src="lib/three.js"></script>
+    <script src="lib/RequestAnimationFrame.js"></script>
+    <script>
+        var renderer = null, scene = null, camera = null, cube = null, animating = false;
+        function onLoad(){
+            var container = document.getElementById("container");
+            renderer = new THREE.WebGLRenderer({antialias: true});
+            renderer.setSize(container.offsetWidth, container.offsetHeight);
+            container.appendChild(renderer.domElement);
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 1, 4000);
+            camera.position.set(0, 0, 3.3333);
+            var light = new THREE.DirectionalLight(0xffffff, 1.0);
+            light.position.set(0, 0, 1);
+            scene.add(light);
+            var mapUrl = "images/molumen_small_funny_angry_monster.jpg";
+            var map = THREE.ImageUtils.loadTexture(mapUrl);
+            var material = new THREE.MeshPhongMaterial({map: map});
+            var geometry = new THREE.CubeGeometry(1, 1, 1);
+            cube = new THREE.Mesh(geometry, material);
+            cube.rotation.x = Math.PI / 5;
+            cube.rotation.y = Math.PI / 5;
+            scene.add(cube);
+            addMouseHandler();
+            run();
+        }
+
+        function run(){
+            renderer.render(scene, camera);
+            if(animating){
+                cube.rotation.x += 0.015;
+                cube.rotation.y -= 0.01;
+                cube.rotation.z += 0.005;
+            }
+            requestAnimationFrame(run);
+        }
+
+        function addMouseHandler(){
+            var dom = renderer.domElement;
+            dom.addEventListener('mouseup', onmouseup, false);//mouseup必须小写
+        }
+
+        function onmouseup(event){
+            event.preventDefault();
+            animating = !animating;
+        }
+    </script>
+</head>
+<body onload="onLoad();" style="">
+    <center><h1>Welcome to WebGL!</h1></center>
+    <div id="container" style="width: 95%; height: 80%; position: absolute"></div>
+    <div id="container" style="width: 95%; height: 6%; bottom: 0; position: absolute">
+        Click to animate the cube.
+    </div>
+</body>
+</html>
