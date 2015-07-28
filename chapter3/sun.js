@@ -12,7 +12,7 @@ Sun.prototype.init = function()
 	var sunGroup = new THREE.Object3D();
 
 	// Create our sun mesh
-	var sunmap = "images/sun_surface.jpg";
+	var sunmap = "../images/sun_surface.jpg";
 	var texture = THREE.ImageUtils.loadTexture(sunmap);
     var material = new THREE.MeshLambertMaterial( { map: texture, ambient : 0xffff00 } );
 

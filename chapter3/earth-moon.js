@@ -35,9 +35,9 @@ Earth.prototype.init = function(){
 }
 
 Earth.prototype.createGlobe = function(){
-    var surfaceMap = THREE.ImageUtils.loadTexture("images/earth_surface_2048.jpg");
-    var normalMap = THREE.ImageUtils.loadTexture("images/earth_normal_2048.jpg");
-    var specularMap = THREE.ImageUtils.loadTexture("images/earth_specular_2048.jpg");
+    var surfaceMap = THREE.ImageUtils.loadTexture("../images/earth_surface_2048.jpg");
+    var normalMap = THREE.ImageUtils.loadTexture("../images/earth_normal_2048.jpg");
+    var specularMap = THREE.ImageUtils.loadTexture("../images/earth_specular_2048.jpg");
     var shader = THREE.ShaderUtils.lib[ "normal" ],
         uniforms = THREE.UniformsUtils.clone( shader.uniforms );
     uniforms["tNormal"].texture = normalMap;
@@ -60,7 +60,7 @@ Earth.prototype.createGlobe = function(){
 }
 
 Earth.prototype.createClouds = function(){
-    var cloudsMap = THREE.ImageUtils.loadTexture("images/earth_clouds_1024.png");
+    var cloudsMap = THREE.ImageUtils.loadTexture("../images/earth_clouds_1024.png");
     var cloudsMaterial = new THREE.MeshLambertMaterial({
         color:0xffffff, map:cloudsMap, transparent:true
     });

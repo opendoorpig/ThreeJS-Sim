@@ -137,22 +137,22 @@ SolarSystemApp.EARTH_DISTANCE_SQUARED = 45000;
 SolarSystemApp.EXAGGERATED_PLANET_SCALE = 5.55;
 SolarSystemApp.planet_specs = [
    // Mercury
-   { size : 1 / 2.54, distance : 0.4, period : 0.24, map : "images/Mercury.jpg" },
+   { size : 1 / 2.54, distance : 0.4, period : 0.24, map : "../images/Mercury.jpg" },
    // Venus
-   { size : 1 / 1.05, distance : 0.7, period : 0.62, map : "images/venus.jpg"  },
+   { size : 1 / 1.05, distance : 0.7, period : 0.62, map : "../images/venus.jpg"  },
    // Earth
-   { type : Earth, size : 1 , distance : 1, period : 1, map : "images/earth_surface_2048.jpg"  },
+   { type : Earth, size : 1 , distance : 1, period : 1, map : "../images/earth_surface_2048.jpg"  },
    // Mars
-   { size : 1 / 1.88, distance : 1.6, period : 1.88, map : "images/MarsV3-Shaded-2k.jpg"  },
+   { size : 1 / 1.88, distance : 1.6, period : 1.88, map : "../images/MarsV3-Shaded-2k.jpg"  },
    // Jupiter
-   { size : 11.1, distance : 5.2, period : 11.86, map : "images/realj2k.jpg"  },
+   { size : 11.1, distance : 5.2, period : 11.86, map : "../images/realj2k.jpg"  },
    // Saturn
-   { type : Saturn, size : 9.41, distance : 10, period : 29.46, map : "images/saturn_bjoernjonsson.jpg"  },
+   { type : Saturn, size : 9.41, distance : 10, period : 29.46, map : "../images/saturn_bjoernjonsson.jpg"  },
    // Uranus
-   { size : 4, distance : 19.6, period : 84.01, map : "images/uranus.jpg"  },
+   { size : 4, distance : 19.6, period : 84.01, map : "../images/uranus.jpg"  },
    // Neptune
-   { size : 3.88, distance : 38.8, period : 164.8, map : "images/neptune.jpg"  },
+   { size : 3.88, distance : 38.8, period : 164.8, map : "../images/neptune.jpg"  },
    // Pluto - have to exaggerate his size or we'll never see the little guy
-   { size : 10 / 5.55, distance : 77.2, period : 247.7, map : "images/pluto.jpg"  },
+   { size : 10 / 5.55, distance : 77.2, period : 247.7, map : "../images/pluto.jpg"  },
                                ];
 

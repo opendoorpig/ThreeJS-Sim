@@ -81,9 +81,9 @@ Earth.prototype.init = function(param)
 Earth.prototype.createShaderGlobe = function()
 {
     // Create our Earth with nice texture - normal map for elevation, specular highlights
-    var surfaceMap = THREE.ImageUtils.loadTexture( "images/earth_surface_2048.jpg" );
-    var normalMap = THREE.ImageUtils.loadTexture( "images/earth_normal_2048.jpg" );
-    var specularMap = THREE.ImageUtils.loadTexture( "images/earth_specular_2048.jpg" );
+    var surfaceMap = THREE.ImageUtils.loadTexture( "../images/earth_surface_2048.jpg" );
+    var normalMap = THREE.ImageUtils.loadTexture( "../images/earth_normal_2048.jpg" );
+    var specularMap = THREE.ImageUtils.loadTexture( "../images/earth_specular_2048.jpg" );
 
     var shader = THREE.ShaderUtils.lib[ "normal" ],
         uniforms = THREE.UniformsUtils.clone( shader.uniforms );
@@ -130,7 +130,7 @@ Earth.prototype.createShaderGlobe = function()
 Earth.prototype.createLitGlobe = function()
 {
     // Create our Earth with nice texture
-    var earthmap = "images/earth_surface_2048.jpg";
+    var earthmap = "../images/earth_surface_2048.jpg";
     var geometry = new THREE.SphereGeometry(1, 32, 32);
     var texture = THREE.ImageUtils.loadTexture(earthmap);
     var material = new THREE.MeshPhongMaterial( { map: texture } );
@@ -149,7 +149,7 @@ Earth.prototype.createLitGlobe = function()
 Earth.prototype.createClouds = function()
 {
     // Create our clouds
-    var cloudsMap = THREE.ImageUtils.loadTexture( "images/earth_clouds_1024.png" );
+    var cloudsMap = THREE.ImageUtils.loadTexture( "../images/earth_clouds_1024.png" );
     var cloudsMaterial = new THREE.MeshLambertMaterial( { color: 0xffffff, map: cloudsMap, transparent:true } );
 
     var cloudsGeometry = new THREE.SphereGeometry(Earth.CLOUDS_SCALE, 32, 32);
@@ -229,7 +229,7 @@ Moon.prototype.init = function(param)
     // Create a group to contain the Moon and orbit
     var moonGroup = new THREE.Object3D();
 
-    var MOONMAP = "images/moon_1024.jpg";
+    var MOONMAP = "../images/moon_1024.jpg";
     var geometry = new THREE.SphereGeometry(Moon.SIZE_IN_EARTHS * size, 32, 32);
     var texture = THREE.ImageUtils.loadTexture(MOONMAP);
     var material = new THREE.MeshPhongMaterial( { map: texture,
