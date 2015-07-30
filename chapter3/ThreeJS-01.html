@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>chapter2-1</title>
     <link rel="stylesheet" href="../css/webglbook.css" />
-    <script src="lib/three.js"></script>
+    <script src="../libs/three.js"></script>
     <script src="../libs/RequestAnimationFrame.js"></script>
     <script>
         var renderer = null, scene = null, camera = null, cube = null, animating = false;
@@ -19,7 +19,7 @@
             var light = new THREE.DirectionalLight(0xffffff, 1.0);
             light.position.set(0, 0, 1);
             scene.add(light);
-            var mapUrl = "images/molumen_small_funny_angry_monster.jpg";
+            var mapUrl = "../images/molumen_small_funny_angry_monster.jpg";
             var map = THREE.ImageUtils.loadTexture(mapUrl);
             var material = new THREE.MeshPhongMaterial({map: map});
             var geometry = new THREE.CubeGeometry(1, 1, 1);
