@@ -70,14 +70,14 @@ MovingBall.prototype.animate = function()
 		newpos = this.object3D.position.y - 6.667;
 		easefn = MovingBall.useBounceFunction ? 
 				TWEEN.Easing.Bounce.EaseOut :
-				TWEEN.Easing.Quadratic.EaseOut;
+				TWEEN.Easing.Quadratic.EaseIn;
 	}
 	else
 	{
 		newpos = this.object3D.position.y + 6.667;
 		easefn = MovingBall.useBounceFunction ? 
 				TWEEN.Easing.Bounce.EaseIn :
-				TWEEN.Easing.Quadratic.EaseIn;
+				TWEEN.Easing.Quadratic.EaseOut;
 	}
 	
 	new TWEEN.Tween(this.object3D.position)
